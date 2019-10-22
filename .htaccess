@@ -1,2 +1,2 @@
 //301 Redirect Entire Directory
-RedirectMatch 301 /(.*) /monsters-rolodex/$1
+RedirectMatch 301 /monsters-rolodex /monsters-rolodex/$1
