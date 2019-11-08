@@ -1,9 +1,13 @@
 import React from 'react';
 
+import SignIn from '../../components/sign-in/sign-in.component'
+
 // import { Container } from './styles';
 
-export const SignInAndSignUp = () =>  (
+const SignInAndSignUp = () =>  (
  <div className='sign-in-and-sign-up'>
-  SING IN 
+  <SignIn />
  </div>
 )
+
+export default SignInAndSignUp;
