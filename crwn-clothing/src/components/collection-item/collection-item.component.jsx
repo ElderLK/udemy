@@ -29,8 +29,8 @@ return (
 );
 }
 
-const mapDispatchTopProps = dispach => ({
+const mapDispatchToProps = dispach => ({
   addItem: item => dispach(addItem(item))
 })
 
-export default connect(null, mapDispatchTopProps)(CollectionItem);
+export default connect(null, mapDispatchToProps)(CollectionItem);

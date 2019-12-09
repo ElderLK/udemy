@@ -23,7 +23,6 @@ return(
 );
 }
 
-
 const mapDispatchToProps = dispatch => ({
   clearItem: item => dispatch(clearItemFromCart(item)),
   addItem:item => dispatch(addItem(item)),
