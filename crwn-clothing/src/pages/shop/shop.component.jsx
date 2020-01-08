@@ -10,7 +10,7 @@ const ShopPage = ({match, fetchCollectionsStartAsync}) => {
 
   useEffect(()=>{
     fetchCollectionsStartAsync();
-  }, [])
+  }, [fetchCollectionsStartAsync])
 
     return (
       <div className="shop-page">

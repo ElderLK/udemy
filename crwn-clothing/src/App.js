@@ -17,9 +17,7 @@ import './App.css';
 const App = ({ setCurrentUser }) => {
 
   useEffect(() =>{
-    let unsubscribeFromAuth = null;
-
-    unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+    const unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if(userAuth){
         const userRef = await createUserProfileDocument(userAuth);
 
@@ -36,11 +34,6 @@ const App = ({ setCurrentUser }) => {
 
     return () =>  unsubscribeFromAuth();
   }, [])
-
- 
-   
-  
-
 
     return (
       <div>
