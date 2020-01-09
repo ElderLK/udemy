@@ -5,10 +5,10 @@ import { HomePageContainer } from './homepage.styles';
 
 // import './homepage.styles.scss'
 
-const HomePage = () => (
-  <HomePageContainer>
+const HomePage = () => {
+  return (<HomePageContainer>
     <Directory />
-  </HomePageContainer>
-);
+  </HomePageContainer>);
+}
 
 export default HomePage;

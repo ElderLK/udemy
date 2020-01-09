@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import Header from './components/header/header.component';
 import Spinner from './components/spinner/spiner.component';
+import ErrorBoundary from './components/error-boundary/error-boundary.component';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
@@ -48,6 +49,7 @@ class App extends React.Component {
         <GlobalStyle />
         <Header/>
           <Switch>
+           <ErrorBoundary> 
             <Suspense fallback={<Spinner />}>
               <Route exact path='/' component={HomePage}/>
               <Route path='/shop' component={ShopPage}/>
@@ -56,6 +58,7 @@ class App extends React.Component {
               (<Redirect to='/' />)
               : (<SignInAndSignUp />) }/>
             </Suspense>
+            </ErrorBoundary> 
           </Switch>
       </div>
     );
