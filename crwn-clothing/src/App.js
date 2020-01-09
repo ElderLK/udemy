@@ -12,7 +12,7 @@ import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrenteUser } from './redux/user/user.selector';
 
-import './App.css';
+import { GlobalStyle } from './global.styles';
 
 class App extends React.Component {
 
@@ -44,6 +44,7 @@ class App extends React.Component {
   render(){
     return (
       <div>
+        <GlobalStyle />
         <Header/>
           <Switch>
             <Route exact path='/' component={HomePage}/>
