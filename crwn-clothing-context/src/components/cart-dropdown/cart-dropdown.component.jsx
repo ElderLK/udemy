@@ -12,7 +12,7 @@ import { CartContext } from '../../providers/cart/cart.provider';
 
 import './cart-dropdown.styles.scss';
 
-const CartDropdown = ({ history, dispatch }) => {
+const CartDropdown = ({ history }) => {
  const { toggleHidden, cartItems } = useContext(CartContext);
  return (
     <div className='cart-dropdown'>
