@@ -1,4 +1,4 @@
-import { takeLatest, call, put, all } from 'redux-saga/effects';
+import { take, takeLatest, call, put, all } from 'redux-saga/effects';
 
 import { firestore, covertCollectionsSnapshotToMap } from '../../firebase/firebase.utils';
 
@@ -10,12 +10,14 @@ import {
 import ShopActionTypes from './shop.types';
 
 export function* fetchCollectionsAsync() {
+    console.log('=====>', 3)
     try {
         const collectionRef = firestore.collection('collections');
         const snapshot = yield collectionRef.get();
         const collectionMap = yield call(covertCollectionsSnapshotToMap, snapshot);
         yield put(fetchCollectionsSuccess(collectionMap));
     } catch(error) {
+        console.log('===>', error)
         yield put(fetchCollectionsFailure(error.message));
     }
 }
