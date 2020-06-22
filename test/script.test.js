@@ -1,3 +1,5 @@
+// https://github.com/sapegin/jest-cheat-sheet
+
 const googleSearch = require('./script');
 
 dbMock = [

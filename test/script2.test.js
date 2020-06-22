@@ -9,12 +9,29 @@ it('call swapi to get people', () => {
     })
 })
 
-it('call swapi to get people with promise', (done) => {
-    expect.assertions(1);
-    swapi.getPeoplePromise(fetch).then( data => {
+it('call swapi to get people with promise', async (done) => {
+    expect.assertions(2);
+    const data = await swapi.getPeoplePromise(fetch);
+    await expect(data.count).toEqual(82);
+    await expect(data.results.length).toBeGreaterThan(2);
+    done();
+})
+
+
+it('getPeople returns count and result', () => {
+    const mockFetch = jest.fn().mockReturnValue(
+        Promise.resolve({
+            json: () => Promise.resolve({
+                count: 82,
+                results: [0, 1, 2, 3, 4, 5]
+            })
+        })
+    );
+
+    expect.assertions(3);
+    return swapi.getPeoplePromise(mockFetch).then((data)=> {
+        expect(mockFetch.mock.calls.length).toBe(1);
+        expect(mockFetch).toBeCalledWith('https://swapi.dev/api/people');
         expect(data.count).toEqual(82);
-        done();
-    }).catch((e) => {
-        console.log('Error ===>', e)
     })
 })
