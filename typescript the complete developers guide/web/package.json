@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
+    "concurrently": "^5.3.0"
+  },
+  "scripts": {
+    "start:build": "parcel index.html",
+    "start:db": "json-server -w db.json",
+    "start": "concurrently npm:start:*"
+  }
+}

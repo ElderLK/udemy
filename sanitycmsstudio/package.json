@@ -1,0 +1,36 @@
+{
+  "name": "sanitycmsstudio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Repository for Exercises from Udemy courses",
+  "main": "package.json",
+  "author": "Elder Lucas <ediluik@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "sanity start",
+    "test": "sanity check",
+    "build": "sanity build"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/base": "^2.0.9",
+    "@sanity/code-input": "^2.0.9",
+    "@sanity/components": "^2.0.9",
+    "@sanity/core": "^2.0.9",
+    "@sanity/default-layout": "^2.0.9",
+    "@sanity/default-login": "^2.0.9",
+    "@sanity/desk-tool": "^2.0.9",
+    "@sanity/production-preview": "^2.1.0",
+    "@sanity/vision": "^2.0.9",
+    "prop-types": "^15.7",
+    "react": "^17.0",
+    "react-dom": "^17.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ElderLK/udemy.git"
+  }
+}
